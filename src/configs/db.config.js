@@ -1,12 +1,12 @@
 import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize({
-    host: 'localhost',
-    username: 'sa',
-    password: '123@qaz',
-    database: 'user.lehuuhieu.dev',
-    port: '1433',
-    dialect: 'mssql',
+    host: process.env.DB_HOST,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT,
 });
 
 export { sequelize };
