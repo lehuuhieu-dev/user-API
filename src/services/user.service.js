@@ -29,6 +29,10 @@ class UserService {
             })
         );
     }
+
+    async GetById(id) {
+        return await new UserRepository().GetById(id);
+    }
 }
 
 export { UserService };

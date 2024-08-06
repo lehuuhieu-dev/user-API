@@ -4,7 +4,9 @@ import { UserController } from '../controllers/user.controller.js';
 
 const router = Router();
 
-router.get('/', UserController.Get);
-router.post('/', UserController.Create);
+router.get('/:id', UserController.GetById);
+router.route('/')
+    .get(UserController.Get)
+    .post(UserController.Create);
 
 export { router as userRouter };

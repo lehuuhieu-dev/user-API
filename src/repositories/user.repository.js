@@ -9,6 +9,10 @@ class UserRepository {
     async Create(user) {
         return await UserModel.create(user);
     }
+
+    async GetById(id) {
+        return await UserModel.findOne({ where: { id } });
+    }
 }
 
 export { UserRepository };

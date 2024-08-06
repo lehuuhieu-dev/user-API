@@ -11,6 +11,14 @@ class UserController {
             data: await new UserService().Create(req.body),
         }).send(res);
     }
+
+    static async GetById(req, res) {
+        const { id } = req.params;
+        
+        return new Ok({
+            data: await new UserService().GetById(id),
+        }).send(res);
+    }
 }
 
 export { UserController };
