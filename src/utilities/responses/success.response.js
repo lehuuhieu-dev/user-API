@@ -18,4 +18,10 @@ class Ok extends SuccessResponse {
     }
 }
 
-export { Ok };
+class Created extends SuccessResponse {
+    constructor({ message, data }) {
+        super({ message: message || 'Created successfully', statusCode: STATUS_CODE.CREATED, data });
+    }
+}
+
+export { Created, Ok };

@@ -1,9 +1,13 @@
-import { User } from '../models/user.model.js';
+import { UserModel } from '../models/user.model.js';
 
 class UserRepository {
     async Get() {
-        const users = await User.findAll();
+        const users = await UserModel.findAll();
         return users;
+    }
+
+    async Create(user) {
+        return await UserModel.create(user);
     }
 }
 

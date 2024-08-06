@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 
 import { sequelize } from '../configs/db.config.js';
 
-const User = sequelize.define('Users', {
+const UserModel = sequelize.define('Users', {
     id: {
         type: DataTypes.UUID,
         allowNull: false,
@@ -49,4 +49,4 @@ const User = sequelize.define('Users', {
     },
 });
 
-export { User };
+export { UserModel };
