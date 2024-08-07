@@ -24,7 +24,7 @@ class UserController {
         }
     }
 
-    static async GetById(req, res) {
+    static async GetById(req, res, next) {
         try {
             const { id } = req.params;
 
