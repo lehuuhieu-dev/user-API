@@ -33,6 +33,10 @@ class UserService {
     async GetById(id) {
         return await new UserRepository().GetById(id);
     }
+
+    async DeleteById(id) {
+        await new UserRepository().DeleteById(id);
+    }
 }
 
 export { UserService };

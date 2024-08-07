@@ -35,6 +35,19 @@ class UserController {
             next(error);
         }
     }
+
+    static async DeleteById(req, res, next) {
+        try {
+            const { id } = req.params;
+            await new UserService().DeleteById(id);
+
+            return new Ok({
+                message: `Delete user with id: ${id} successfully`,
+            }).send(res);
+        } catch (error) {
+            next(error);
+        }
+    }
 }
 
 export { UserController };

@@ -1,4 +1,5 @@
 import { UserModel } from '../models/user.model.js';
+import { NotFoundError } from '../common/responses/error.response.js';
 
 class UserRepository {
     async Get() {
@@ -11,7 +12,18 @@ class UserRepository {
     }
 
     async GetById(id) {
-        return await UserModel.findOne({ where: { id } });
+        const user = await UserModel.findOne({ where: { id } });
+
+        if (!user) {
+            throw new NotFoundError();
+        }
+        return user;
+    }
+
+    async DeleteById(id) {
+        const user = await this.GetById(id);
+
+        await user.destroy();
     }
 }
 

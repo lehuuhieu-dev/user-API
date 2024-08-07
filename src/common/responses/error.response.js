@@ -14,4 +14,10 @@ class BadRequestError extends ErrorResponse {
     }
 }
 
-export { BadRequestError };
+class NotFoundError extends ErrorResponse {
+    constructor(message = 'Not found error') {
+        super({ message, statusCode: STATUS_CODE.NOT_FOUND });
+    }
+}
+
+export { BadRequestError, NotFoundError };
