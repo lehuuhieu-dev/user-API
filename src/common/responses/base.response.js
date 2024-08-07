@@ -1,7 +1,7 @@
 import { STATUS_CODE } from '../../constants/index.js';
 
 class BaseResponse {
-    constructor({ message = 'Send request successfully', statusCode = STATUS_CODE.OK, data = {} }) {
+    constructor({ message = 'Send request successfully', statusCode = STATUS_CODE.OK, data = null }) {
         this.message = message;
         this.statusCode = statusCode;
         this.data = data;
